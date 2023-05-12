@@ -313,6 +313,7 @@ module.exports = {
             "integration/java/ShardingSphere",
             "integration/java/iotdb",
             "integration/java/firezone",
+            "integration/java/CloudFoundry",
           ],
         },
         {
