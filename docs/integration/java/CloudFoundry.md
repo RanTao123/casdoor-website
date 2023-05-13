@@ -38,6 +38,7 @@ Start the CloudFoundry by follow.
   ![Casdoor Application Setting](/img/integration/java/CloudFoundry/command.png)
 
 ## Step4. Integrate Casdoor
+
 Now open another command line and input :
 * $ curl 'http://localhost/oauth/authorize?response_type=token&client_id=app&scope=openid&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapp%2F' -i -X GET \
   -H 'Accept: application/x-www-form-urlencoded'
