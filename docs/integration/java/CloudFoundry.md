@@ -1,20 +1,22 @@
 ---
-title: "CloudFoundry"
-metaTitle: "CloudFoundry | CloudFoundry Authentication Tutorial"
-metaDescription: "Learn how to integrate Casdoor with CloudFoundry to secure your applications using JWT"
+title: CloudFoundry
+description:  Learn how to integrate Casdoor with CloudFoundry to secure your applications
+keywords: [oauth, CloudFoundry, integration]
+authors: [tr10086]
 ---
+
 Before the integration, we need to deploy Casdoor locally.
 
 Then we can quickly implement a Casdoor-based login page in our own app with the following steps.
 
-## Configure Casdoor application
+## Step1. Configure Casdoor application
 
 1. Create or use an existing Casdoor application.
 2. Add a redirect url: `http://CASDOOR_HOSTNAME/login`
    ![Casdoor Application Setting](/img/integration/java/CloudFoundry/cas.png)
 3. Copy the client ID, we will need it in the following steps.
 
-## Add user in Casdoor
+## Step2. Add user in Casdoor
 
 Now you have the application, but not a user. That means you need to create a user and assign the role.
 
@@ -26,7 +28,7 @@ Now you need to set up a password for your user, which you can do by clicking ma
 
 Choose a password for your user and confirm it.
 
-## Build CloudFoundry App
+## Step3. Build CloudFoundry App
 
 Start the CloudFoundry by follow.
 
@@ -35,6 +37,7 @@ Start the CloudFoundry by follow.
 * $./gradlew run
   ![Casdoor Application Setting](/img/integration/java/CloudFoundry/command.png)
 
+## Step4. Integrate Casdoor
 Now open another command line and input :
 * $ curl 'http://localhost/oauth/authorize?response_type=token&client_id=app&scope=openid&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapp%2F' -i -X GET \
   -H 'Accept: application/x-www-form-urlencoded'
